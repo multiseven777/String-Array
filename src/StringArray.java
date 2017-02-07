@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class StringArray {
@@ -16,20 +17,28 @@ public class StringArray {
 		
 		do {
 		
-		System.out.println("Welcome to the Unbeleivable String ArrayList Simulator 2017!");
-		System.out.println("Please enter one of these magical words:");
-		System.out.println("'List', to view the current roster!");
-		System.out.println("'Add', to add a new unimaginable object!");
-		System.out.println("'Remove', to remove an object, duh!");
-		System.out.println("'Search' for a first-letter search!");
-		System.out.println("And don't forget, it's CaSe SeNsItIvE!");
+		System.out.println("________________________________________________________________");
+		System.out.println("|                                                               |");
+		System.out.println("|  Welcome to the Unbeleivable String ArrayList Simulator 2017! |");
+		System.out.println("|  Please enter one of these magical words:                     |");
+		System.out.println("|  'List', to view the current roster!                          |");
+		System.out.println("|  'Add', to add a new unimaginable object!                     |");
+		System.out.println("|  'Remove', to remove an object, duh!                          |");
+		System.out.println("|  'Search' for a first-letter search!                          |");
+		System.out.println("|  And don't forget, it's CaSe SeNsItIvE!                       |");
+		System.out.println("|_______________________________________________________________|");
 		
 		in = new Scanner(System.in);
 		String n = in.next();
 		
 		switch(n) {
 		case "List":
-			System.out.println("Current list of fluffies: " + obj);
+			Iterator<String> itr = obj.iterator();
+			while(itr.hasNext()) {
+				Object element = itr.next();
+				System.out.print(element + " ");
+			}
+			System.out.println();
 			break;
 		case "Add":
 			System.out.println("Enter a happy new animal: ");
@@ -55,7 +64,7 @@ public class StringArray {
 			break;
 		case "Search":
 			System.out.println("Enter the first letter to search: ");
-			in = new Scanner(System.in);
+//			in = new Scanner(System.in);
 			String d = in.next();
 			String start = d;
 			obj.stream()
